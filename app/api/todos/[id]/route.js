@@ -32,9 +32,11 @@ export async function PUT(req, { params }) {
 
 export async function DELETE(req,{params}){
    try {
+    
       const user = await getOrCreateUser();
         const id = params.id;
-    const todo = await prisma.todo.delete({
+        console.log("idd",id)
+    const todo = await prisma.todo.deleteMany({
         where:{
            id: id,
             userId:user.id
