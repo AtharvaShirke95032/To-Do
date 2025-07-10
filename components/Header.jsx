@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <div className="container mx-auto pt-6 flex justify-between">
+    <div className="mx-auto px-5 md:px-40 pb-6 pt-6 flex justify-between border-b-2">
       <div className="text-2xl font-bold">Todo App</div>
       <SignedIn>
         <div className="flex items-center gap-4">

@@ -1,36 +1,27 @@
-
-import { Inter } from "next/font/google";
-
-import { ClerkProvider } from "@clerk/nextjs";
+// app/layout.js or app/layout.tsx
 import "./globals.css";
-import Header from "@/components/Header";
+import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 
-
-const inter = Inter({
-  subsets: ["latin"], // ✅ Add this line
-  preload: true,      // optional, but defaults to true
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Todo App",
-  description: "A simple todo app",
+  title: "Your App",
+  description: "Your description",
 };
 
 export default function RootLayout({ children }) {
   return (
-    
     <html lang="en">
-     
-      <body className={`${inter.className}`}>
-        <div className="min-h-screen"> 
-         <ClerkProvider> 
-          <Header/>
-        {children}
-         </ClerkProvider>
-         </div>
+      <body className={inter.className}>
+        
+          <div className="min-h-screen">
+            <ClerkProvider>
+            {children}
+            </ClerkProvider>
+          </div>
+        
       </body>
-      
     </html>
-   
   );
 }
