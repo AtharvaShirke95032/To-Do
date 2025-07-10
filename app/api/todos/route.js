@@ -32,6 +32,8 @@ export async function POST(req){
     const todo =await prisma.todo.create({
         data:{
             title:body.title,
+            description:body.description || "",
+            status:"pending",
             userId:user.id
         },
     

@@ -25,6 +25,7 @@ model Todo {
   id String @id @default(uuid())
   title String
   description String?
+  status      String   @default("pending") 
   completed Boolean @default(false)
   userId String
   user User @relation(fields:[userId], references: [id])
